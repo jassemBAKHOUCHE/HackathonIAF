@@ -146,6 +146,7 @@
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
+    animation: fadeIn 0.8s ease-in-out;
   }
 
   form {
@@ -155,6 +156,7 @@
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
   }
 
   div {
@@ -242,6 +244,20 @@
     background-color: #cfd8dc;
     cursor: not-allowed;
   }
+
+  /* ======== Animations ======== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
   p {
     text-align: center;
