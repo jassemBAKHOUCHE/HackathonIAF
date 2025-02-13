@@ -32,51 +32,30 @@ body {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-.carousel {
-  position: relative;
-  max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-}
 
-.carousel-container {
+.event {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.carousel-titre {
+.event-titre {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
 }
 
-.carousel-date {
+.event-date {
   font-size: 1rem;
   color: #666;
   font-style: italic;
 }
 
-.carousel-description {
+.event-description {
   font-size: 1rem;
   color: #444;
   line-height: 1.4;
 }
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
 
 h1 {
   font-size: 36px;

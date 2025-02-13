@@ -111,7 +111,6 @@
         <p><strong>Date :</strong> {formatDate(event.date)}</p>
         <p>{event.description}</p>
         <p><strong>Inscription :</strong> {event.nb_membres > 1 ? "En équipe" : "Individuelle"}</p>
-        <button>S'inscrire</button>
       </div>
     {/each}
   
