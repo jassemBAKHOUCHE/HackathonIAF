@@ -85,6 +85,7 @@
       text-align: center;
       padding: 20px;
       transition: transform 0.3s ease;
+      animation: fadeIn 0.8s ease-in-out;
     }
   
     .partner-card:hover {
