@@ -21,6 +21,7 @@
         <li><a href="/about">À Propos</a></li>
         <li><a href="/actions">Nos Actions</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Se connecter</a></li>
       </ul>
     </nav>
   </div>
