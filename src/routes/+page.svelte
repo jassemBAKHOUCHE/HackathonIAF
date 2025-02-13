@@ -8,7 +8,13 @@
       s’orienter vers les carrières d’ingénierie et de sensibiliser l’ensemble des étudiants aux enjeux de mixité
       dans ces domaines.
     </p>
-  
+
+    <div class="carousel">
+      <button on:click={prev} class="prev">‹</button>
+        <img src={images[currentIndex]} alt="" class="carousel-img" />
+      <button on:click={next} class="next">›</button>
+    </div>
+
     <h2>Nos actions et événements</h2>
     <p>
       Tout au long de l’année, Ingénieur-e au féminin mène diverses actions pour promouvoir la place des femmes dans
@@ -18,3 +24,59 @@
     </p>
   </div>
   
+  <script>
+
+    import { onMount } from 'svelte';
+    import { onDestroy } from 'svelte';
+    let images = [
+      '../../favicon.png',
+      '../../Logo_Credit_Agricol.jpg',
+      '../../Logo_CVEC.png'
+    ];
+    
+    let currentIndex = 0;
+    
+    function next() {
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+  
+    function prev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+    }
+  
+    let interval;
+    onMount(() => {
+      interval = setInterval(next, 3000);
+      return () => clearInterval(interval);
+    });
+  </script>
+
+
+
+<style>
+  .carousel {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .carousel-img {
+    width: 90%;
+    height: 45%;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+</style>
