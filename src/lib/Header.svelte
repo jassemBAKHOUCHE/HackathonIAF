@@ -68,6 +68,7 @@
         <li><a href="/">Accueil</a></li>
         <li><a href="/events">Evenements</a></li>
         <li><a href="/login">Connexion</a></li>
+        <li><a href="/partenaire">Nos partenaires</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
