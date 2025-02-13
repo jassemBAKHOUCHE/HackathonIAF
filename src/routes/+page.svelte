@@ -11,7 +11,6 @@
   </p>
   <h2>Organigramme</h2>
   <div class="chartH1Container">
-    <span class="chartH1">Bureau Restreint</span>
   </div>
   <div class="chartGrid">
     <div class="chartModule">
@@ -22,7 +21,6 @@
     </div>
   </div>
   <div class="chartH1Container">
-    <span class="chartH1">Bureau élargie</span>
   </div>
   <div class="chartGrid">
     <div class="chartModule">
