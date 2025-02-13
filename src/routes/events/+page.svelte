@@ -1,11 +1,25 @@
 <script>
-    import { events } from "../../lib/events.js";
+    import { onMount } from "svelte";
+    import { supabase } from "../../lib/supabase.js";
   
-    const today = new Date().toISOString().split("T")[0];
+    let events = [];
+    let upcomingEvents = [];
+    let pastEvents = [];
+    let today = new Date().toISOString().split("T")[0];
   
-    // Séparation des événements
-    let upcomingEvents = events.filter(event => event.date >= today);
-    let pastEvents = events.filter(event => event.date < today);
+    async function fetchEvents() {
+      let { data, error } = await supabase.from("events").select("*");
+      if (error) {
+        console.error("Erreur de récupération :", error.message);
+      } else {
+        events = data;
+        console.log(events);
+        upcomingEvents = events.filter(event => event.date >= today);
+        pastEvents = events.filter(event => event.date < today);
+      }
+    }
+  
+    onMount(fetchEvents);
   </script>
   
   <style>
@@ -87,8 +101,8 @@
       <div class="event upcoming">
         <h2>{event.titre}</h2>
         <p><strong>Date :</strong> {event.date}</p>
-        <p>{event.desc}</p>
-        <p><strong>Inscription :</strong> {event.nb_membres > 1 ? "En équipe ou solo" : "Individuelle"}</p>
+        <p>{event.description}</p>
+        <p><strong>Inscription :</strong> {event.nb_membres > 1 ? "En équipe" : "Individuelle"}</p>
         <button>S'inscrire</button>
       </div>
     {/each}
@@ -99,7 +113,7 @@
       <div class="event past">
         <h2>{event.titre}</h2>
         <p><strong>Date :</strong> {event.date}</p>
-        <p>{event.desc}</p>
+        <p>{event.description}</p>
       </div>
     {/each}
   </div>
