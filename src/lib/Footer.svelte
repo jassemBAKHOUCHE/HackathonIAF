@@ -5,7 +5,7 @@
       <a href="/">Accueil</a>
       <a href="/about">À Propos</a>
       <a href="/contact">Contact</a>
-      <a href="/admin">Admin</a>
+      <a href="/login">Admin</a>
     </div>
   </footer>
   

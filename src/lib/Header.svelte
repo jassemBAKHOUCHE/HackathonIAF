@@ -69,7 +69,6 @@
         <li><a href="/events">Evenements</a></li>
         <li><a href="/partenaire">Nos partenaires</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/login">Admin</a></li>
       </ul>
     </nav>
   </div>

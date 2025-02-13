@@ -2,37 +2,35 @@
     import { onMount } from "svelte";
     import { page } from "$app/stores";
     import { supabase } from "$lib/supabase";
+    import bcrypt from "bcryptjs";
   
     let events = $page.data.events || [];
     let newEvent = { titre: "", date: "", description: "", nb_membres: 1 };
     let editEvent = null;
   
+    let newPassword = "";
+    let confirmPassword = "";
+    let passwordMessage = "";
+  
     async function addEvent() {
-    const { data, error } = await supabase
-        .from("events")
-        .insert([newEvent])
-        .select(); // Ensures Supabase returns the inserted data
-
-    if (error) {
+      const { data, error } = await supabase.from("events").insert([newEvent]).select();
+  
+      if (error) {
         console.error("❌ Error adding event:", error);
         return;
-    }
-
-    if (!data) {
+      }
+  
+      if (!data) {
         console.error("❌ Supabase returned null data");
         return;
+      }
+  
+      events = [...events, data[0]];
+      newEvent = { titre: "", date: "", description: "", nb_membres: 1 };
     }
-
-    events = [...events, data[0]];
-    newEvent = { titre: "", date: "", description: "", nb_membres: 1 };
-    }
-
   
     async function updateEvent() {
-      const { error } = await supabase
-        .from("events")
-        .update(editEvent)
-        .eq("id", editEvent.id);
+      const { error } = await supabase.from("events").update(editEvent).eq("id", editEvent.id);
   
       if (error) {
         console.error("Error updating event:", error);
@@ -52,6 +50,34 @@
       }
   
       events = events.filter(event => event.id !== id);
+    }
+  
+    async function updatePassword() {
+      if (newPassword !== confirmPassword) {
+        passwordMessage = "❌ Les mots de passe ne correspondent pas.";
+        return;
+      }
+  
+      if (newPassword.length < 6) {
+        passwordMessage = "❌ Le mot de passe doit contenir au moins 6 caractères.";
+        return;
+      }
+  
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+  
+      const { error } = await supabase
+        .from("password")
+        .update({ password: hashedPassword })
+        .eq("id", 1);
+  
+      if (error) {
+        console.error("❌ Erreur lors de la mise à jour du mot de passe:", error);
+        passwordMessage = "❌ Échec de la mise à jour du mot de passe.";
+      } else {
+        passwordMessage = "✅ Mot de passe mis à jour avec succès !";
+        newPassword = "";
+        confirmPassword = "";
+      }
     }
   </script>
   
@@ -98,6 +124,18 @@
       border: 1px solid #ddd;
       border-radius: 4px;
     }
+  
+    .password-container {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #ddd;
+    }
+  
+    .message {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
   
   <div class="admin-container">
@@ -137,6 +175,15 @@
           </div>
         </div>
       {/each}
+    </div>
+  
+    <!-- Password Update Section -->
+    <div class="password-container">
+      <h3>Modifier le mot de passe administrateur</h3>
+      <input type="password" placeholder="Nouveau mot de passe" bind:value={newPassword} />
+      <input type="password" placeholder="Confirmer le mot de passe" bind:value={confirmPassword} />
+      <button on:click={updatePassword}>Mettre à jour</button>
+      <p class="message">{passwordMessage}</p>
     </div>
   </div>
   
