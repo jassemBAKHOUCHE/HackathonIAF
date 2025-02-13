@@ -7,7 +7,7 @@
   @import "../app.css";
 </style>
 
-<Header title="IAF - Ingénieur-e au Féminin" />
+<Header title="- Ingénieur-e au Féminin" />
 
 <slot />
 
