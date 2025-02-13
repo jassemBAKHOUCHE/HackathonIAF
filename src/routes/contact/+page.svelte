@@ -69,3 +69,80 @@
     {/if}
   </button>
 </form>
+
+
+<style>
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  div {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #5c6bc0;
+    outline: none;
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D085FA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #520184;
+  }
+
+  button:disabled {
+    background-color: #cfd8dc;
+    cursor: not-allowed;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1rem;
+    color: #28a745;
+    margin-top: 20px;
+  }
+</style>
