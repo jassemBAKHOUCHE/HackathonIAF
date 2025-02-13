@@ -24,29 +24,77 @@
   </p>
   <h2>Organigramme</h2>
   <div class="chartH1Container">
+    <h2 class="chartH1"> Co-Présidence </h2>
   </div>
   <div class="chartGrid">
     <div class="chartModule">
       <span class="chartName">Emma Rechon-Reguet</span>
       <hr class="chartLine" />
-      <span class="chartTitle">Présidente</span>
-      <img src="/images_ornigramme/presidente.jpg" alt="photo_presidente" />
+      <span class="chartTitle">Présidente sur Annecy</span>
+      <img src="/images_ornigramme/presidente.jpg" alt="photo_presidente_1" />
+    </div>
+    <div class="chartModule">
+      <span class="chartName">Jenine Boulghib</span>
+      <hr class="chartLine" />
+      <span class="chartTitle">Présidente sur Chambéry</span>
+      <img src="/images_ornigramme/basic.png" alt="photo_presidente_2" />
     </div>
   </div>
   <div class="chartH1Container">
+    <h2 class="chartH1"> Bureau Restreint </h2>
   </div>
   <div class="chartGrid">
     <div class="chartModule">
-      <span class="chartName">Alyssa Belleville</span>
+      <span class="chartName">Ikram Mehalli</span>
       <hr class="chartLine" />
       <span class="chartTitle">Secrétaire</span>
-      <img src="/images_ornigramme/secretaire.jpg" alt="photo_presidente" />
+      <img src="/images_ornigramme/secretaire.jpg" alt="photo_secretaire" />
     </div>
+    <div class="chartModule">
+      <span class="chartName">Bryans Yohann Rajaspera</span>
+      <hr class="chartLine" />
+      <span class="chartTitle">Trésorier</span>
+      <img src="/images_ornigramme/tresorier.jpg" alt="photo_tresorier" />
+    </div>
+    <div class="chartModule">
+      <span class="chartName">Lili Asciac</span>
+      <hr class="chartLine" />
+      <span class="chartTitle">Responsable communication</span>
+      <img src="/images_ornigramme/res_co_annecy.jpg" alt="photo_res_co_annecy" />
+    </div>
+  </div>
+  <div class="chartH1Container">
+    <h2 class="chartH1"> Responsable Communication </h2>
+  </div>
+  <div class="chartGrid">
+    <div class="chartModule">
+      <span class="chartName">Lili Asciac</span>
+      <hr class="chartLine" />
+      <span class="chartTitle">Responsable sur Annecy</span>
+      <img src="/images_ornigramme/res_co_annecy.jpg" alt="photo_res_co_annecy" />
+    </div>
+    <div class="chartModule">
+      <span class="chartName">Clara Viossat</span>
+      <hr class="chartLine" />
+      <span class="chartTitle">Responsable sur Chambéry</span>
+      <img src="/images_ornigramme/res_co_chambery.jpg" alt="photo_res_co_chambery" />
+    </div>
+  </div>
+  <div class="chartH1Container">
+    <h2 class="chartH1"> Responsable events, conférences et intervertions des écoles </h2>
+  </div>
+  <div class="chartGrid">
     <div class="chartModule">
       <span class="chartName">Julie Fabre</span>
       <hr class="chartLine" />
-      <span class="chartTitle">Vice Présidente</span>
-      <img src="/images_ornigramme/vice_presidente.jpg" alt="photo_presidente" />
+      <span class="chartTitle">Responsable</span>
+      <img src="/images_ornigramme/res_event_1.jpg" alt="photo_res_co_annecy" />
+    </div>
+    <div class="chartModule">
+      <span class="chartName">Juliette Lompret</span>
+      <hr class="chartLine" />
+      <span class="chartTitle">Responsable</span>
+      <img src="/images_ornigramme/res_event_2.jpg" alt="photo_res_co_chambery" />
     </div>
   </div>
   <h2>Nos actions et événements</h2>
