@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ======== Contenu Principal ======== */
@@ -136,6 +137,13 @@ nav {
   background: none;
   border: none;
   color: white;
+}
+
+.logo-title{
+  color: white;
+  text-decoration: none;
+  font-weight: 1000;
+
 }
 
 /* ========== RESPONSIVE ========== */

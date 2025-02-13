@@ -1,8 +1,10 @@
 <script>
-  export let title = "Ingénieur-e au Féminin";
+  export let title = "IAF - Ingénieur-e au Féminin";
+  let menuOpen = false;
 </script>
 
 <style>
+  @import "./header.css";
 
   .logo-container {
     display: flex;
@@ -11,15 +13,39 @@
   }
 
   .logo {
-    width: 40px; /* Taille adaptée */
+    width: 40px;
     height: auto;
   }
 
-  .logo-title {
-    font-size: 20px;
-    font-weight: bold;
+  .menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
     color: white;
-    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      width: 200px;
+      background: var(--primary-color);
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
   }
 </style>
 
@@ -31,12 +57,18 @@
       <a href="/" class="logo-title">{title}</a>
     </div>
 
+    <!-- Bouton Menu Mobile -->
+    <button class="menu-btn" on:click={() => (menuOpen = !menuOpen)}>
+      {menuOpen ? "✖" : "☰"}
+    </button>
+
     <!-- Navigation -->
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links {menuOpen ? 'open' : ''}">
         <li><a href="/">Accueil</a></li>
-        <li><a href="/login">Se connecter</a></li>
-        <li><a href="/events">Evenements</a></li>
+        <li><a href="/about">À Propos</a></li>
+        <li><a href="/actions">Nos Actions</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   </div>
