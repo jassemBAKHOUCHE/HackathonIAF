@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+    .menu-btn {
+      display: block; /* Rend le bouton visible */
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      width: 200px;
+      background: var(--primary-color);
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .nav-links a {
+      padding: 10px;
+      display: block;
+      color: white;
+      text-align: center;
+    }
+  }
+  
