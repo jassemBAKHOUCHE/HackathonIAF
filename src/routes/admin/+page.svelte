@@ -11,6 +11,16 @@
     let newPassword = "";
     let confirmPassword = "";
     let passwordMessage = "";
+
+    import { goto } from "$app/navigation";
+
+    onMount(() => {
+        const isAdminLoggedIn = sessionStorage.getItem("admin_logged_in");
+
+        if (!isAdminLoggedIn) {
+        goto("/login"); // Redirect to login page if not logged in
+        }
+    });
   
     async function addEvent() {
       const { data, error } = await supabase.from("events").insert([newEvent]).select();

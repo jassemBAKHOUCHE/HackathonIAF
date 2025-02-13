@@ -17,7 +17,7 @@
         .single();
   
       if (error || !data) {
-        message = "❌ Erreur de connexion: Impossible de récupérer le mot de passe.";
+        message = "❌ Error: Unable to fetch password.";
         console.error(error);
         return;
       }
@@ -28,22 +28,24 @@
       const isValid = await bcrypt.compare(password, hashedPassword);
   
       if (isValid) {
-        message = "✅ Connexion réussie !";
-        setTimeout(() => goto("/admin"), 1000); // Redirect to the admin page
+        // Store admin login status in sessionStorage
+        sessionStorage.setItem("admin_logged_in", "true");
+        message = "✅ Login successful!";
+        setTimeout(() => goto("/admin"), 1000); // Redirect to admin panel
       } else {
-        message = "❌ Mot de passe incorrect.";
+        message = "❌ Incorrect password.";
       }
     }
   </script>
   
   <div class="login-container">
-    <h2>Se connecter en tant qu'administrateur</h2>
+    <h2>Admin Login</h2>
   
     <form on:submit={handleLogin}>
-      <label for="password">Mot de passe</label>
-      <input type="password" id="password" bind:value={password} placeholder="Entrez votre mot de passe" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" bind:value={password} placeholder="Enter admin password" required />
       
-      <button type="submit">Se connecter</button>
+      <button type="submit">Login</button>
     </form>
   
     <p>{message}</p>
