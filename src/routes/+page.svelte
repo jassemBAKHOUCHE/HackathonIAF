@@ -2,7 +2,7 @@
 <div class="container">
   <h1>Bienvenue sur le site de IAF - Ingénieur-e au Féminin</h1>
 
-  <h2>Événements à venir</h2>
+  <h2>Événement à venir</h2>
 
   <div class="event">
     {#if upcomingEvents.length > 0}
