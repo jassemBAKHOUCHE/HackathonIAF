@@ -1,11 +1,15 @@
+<h1>Welcome to SvelteKit</h1>
 
-  
-  <main class="min-h-screen bg-[#F6CCB0] text-[#806886] flex flex-col items-center justify-center p-6">
-    <h1 class="text-4xl font-bold text-[#C684B5]">Bienvenue sur ma page de test !</h1>
-    <p class="mt-4 text-lg text-[#CB9DAE]">Ceci est une page pour tester TailwindCSS avec Svelte.</p>
-  
-    <button class="mt-6 bg-[#C684B5] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#CB9DAE] transition">
-      Cliquez ici
-    </button>
-  </main>
-  
+<h2>Présentation de l'association</h2>
+<p>Ingénieur-e au féminin est une association de Polytech Annecy-Chambéry qui œuvre pour la promotion de l’égalité femmes-hommes 
+    dans les études scientifiques. Son objectif est d’encourager les jeunes filles à s’orienter vers les carrières d’ingénierie 
+    et de sensibiliser l’ensemble des étudiants aux enjeux de mixité dans ces domaines. Le bureau de l’association est réparti 
+    sur les deux sites de Polytech Annecy-Chambéry, permettant ainsi une présence active sur l’ensemble du campus.</p>
+
+<h2>Nos actions et événements</h2>
+<p>Tout au long de l’année, Ingénieur-e au féminin mène diverses actions pour promouvoir la place des femmes dans 
+    l’ingénierie. L’association intervient dans les collèges et lycées pour déconstruire les stéréotypes et 
+    encourager les jeunes filles à choisir des filières scientifiques. Elle organise également des conférences 
+    avec des professionnels du secteur afin de motiver et d’inspirer les étudiants. Présente lors des Journées 
+    Portes Ouvertes de l’Université Savoie Mont Blanc, elle partage aussi des statistiques sur la représentation
+     des femmes dans les formations d’ingénieur.</p>    
