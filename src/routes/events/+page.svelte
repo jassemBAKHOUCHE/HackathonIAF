@@ -20,6 +20,14 @@
     }
   
     onMount(fetchEvents);
+
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      const day = String(date.getDate()).padStart(2, '0');  // Ajoute un zéro devant si nécessaire
+      const month = String(date.getMonth() + 1).padStart(2, '0');  // Les mois commencent à 0, donc ajout +1
+      const year = date.getFullYear();
+      return `${day} / ${month} / ${year}`;
+    }
   </script>
   
   <style>
@@ -100,7 +108,7 @@
     {#each upcomingEvents as event}
       <div class="event upcoming">
         <h2>{event.titre}</h2>
-        <p><strong>Date :</strong> {event.date}</p>
+        <p><strong>Date :</strong> {formatDate(event.date)}</p>
         <p>{event.description}</p>
         <p><strong>Inscription :</strong> {event.nb_membres > 1 ? "En équipe" : "Individuelle"}</p>
         <button>S'inscrire</button>
@@ -112,7 +120,7 @@
     {#each pastEvents as event}
       <div class="event past">
         <h2>{event.titre}</h2>
-        <p><strong>Date :</strong> {event.date}</p>
+        <p><strong>Date :</strong> {formatDate(event.date)}</p>
         <p>{event.description}</p>
       </div>
     {/each}

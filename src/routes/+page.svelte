@@ -1,10 +1,17 @@
 <div class="container">
   <h1>Bienvenue sur le site de IAF - Ingénieur-e au Féminin</h1>
 
+  <h2>Événements à venir</h2>
+
   <div class="carousel">
     <button on:click={prev} class="prev">‹</button>
-      <img src={images[currentIndex]} alt="" class="carousel-img" />
+      <div class = "carousel-container">
+        <p class="carousel-titre">{upcomingEvents[currentIndex]?.titre}</p>
+        <p class="carousel-date">{formatDate(upcomingEvents[currentIndex]?.date)}</p>
+        <p class="carousel-description">{upcomingEvents[currentIndex]?.description}</p>
+      </div>
     <button on:click={next} class="next">›</button>
+    
   </div>
 
   <h2>Présentation de l'association</h2>
@@ -55,8 +62,37 @@
 
 
 <script>
+  import { onMount } from "svelte";
+    import { supabase } from "../lib/supabase.js";
+  
+    let events = [];
+    let upcomingEvents = [];
+    let pastEvents = [];
+    let today = new Date().toISOString().split("T")[0];
+  
+    async function fetchEvents() {
+      let { data, error } = await supabase.from("events").select("*");
+      if (error) {
+        console.error("Erreur de récupération :", error.message);
+      } else {
+        events = data;
+        console.log(events);
+        upcomingEvents = events.filter(event => event.date >= today);
+        pastEvents = events.filter(event => event.date < today);
+      }
+    }
+  
+    onMount(fetchEvents);
 
-  import { onMount } from 'svelte';
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      const day = String(date.getDate()).padStart(2, '0');  // Ajoute un zéro devant si nécessaire
+      const month = String(date.getMonth() + 1).padStart(2, '0');  // Les mois commencent à 0, donc ajout +1
+      const year = date.getFullYear();
+      return `${day} / ${month} / ${year}`;
+    }
+
+
   import { onDestroy } from 'svelte';
   let images = [
     '../../favicon.png',
@@ -67,11 +103,11 @@
   let currentIndex = 0;
   
   function next() {
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex = (currentIndex + 1) % upcomingEvents.length;
   }
 
   function prev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    currentIndex = (currentIndex - 1 + images.length) % upcomingEvents.length;
   }
 
   let interval;
