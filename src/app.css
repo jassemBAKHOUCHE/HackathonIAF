@@ -211,3 +211,144 @@ footer {
 .footer-links a:hover {
   color: var(--primary-color);
 }
+
+/* Organigramme*/
+
+.chartH1 {
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.chartH2 {
+  font-size : 0.97em;
+}
+
+.chartH1Container {
+  margin : 3.2em 0 2em;
+}
+
+.chartH2Container {
+  margin : 1em 0;
+}
+
+.chartH1Container + .chartH2Container {
+  margin-top : 0;
+}
+
+.chartContainer {
+  display: grid;
+  grid-template-areas: 
+  "head content"
+  ". content";
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 490px 1fr;
+  grid-gap: 0px;
+  margin-top : 2em;
+}
+
+.bossFigure {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  grid-area: head;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  align-self: top;
+}
+
+.peopleFigures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+}
+
+.selectableChartModule{
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .chartContainer {
+      grid-template-areas: "head" "content";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto minmax(150px, auto) 1fr minmax(150px, auto) auto;
+  }
+  .bossFigure {
+      margin: 1.5em 0 0 0;
+  }
+}
+
+.chartGrid {
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-auto-rows: minmax(340px, auto);
+  grid-gap: 1.3em 0.4em;
+}
+
+.chartGrid .chartModule {
+  display: flex;
+  flex-flow: column;
+  background: #f8d7d7;
+  padding: 2.6em 1em 0 1em;
+  box-shadow: 0 0.16rem 0.188rem 0 rgba(70, 65, 83, 0.2);
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
+}
+
+
+@supports (display: grid) {
+  .chartGrid .chartModule {
+      margin: 0em 1em;
+  }
+}
+
+.chartModuleBoss {
+  display: flex;
+  flex-flow: column;
+  padding: 2.6em 1em 1em 1em;
+  background: white;
+  box-shadow: 0 0.16rem 0.188rem 0 rgba(70, 65, 83, 0.2);
+  align-self: top;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 330px;
+}
+
+.chartModule .chartName, .chartModuleBoss .chartName {
+  font-size: 1.1em;
+  margin: 1em 0 0.65em;
+  line-height: 1.2;
+  font-weight: normal;
+  text-align: center;
+}
+
+.chartModule .chartLine, .chartModuleBoss .chartLine {
+  width: 2rem;
+  height: 0.25rem;
+  border: none;
+  background-color: #d10056;
+}
+
+.chartModule .chartTitle, .chartModuleBoss .chartTitle {
+  margin: 0.65em 0 2rem;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.chartModule .chartImage {
+  order: -1;
+  width: 7.5em;
+  height: 9.75em;
+  align-self: center;
+}
+
+.chartModuleBoss .chartImageBoss {
+  order: -1;
+  width : 168px;
+  align-self: center;
+}
