@@ -21,6 +21,8 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@supabase/supabase-js": "^2.48.1"
+		"@supabase/supabase-js": "^2.48.1",
+		"nodemailer": "^6.10.0",
+		"supabase": "^2.12.1"
 	}
 }
