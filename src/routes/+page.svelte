@@ -1,6 +1,12 @@
 <div class="container">
   <h1>Bienvenue sur le site de IAF - Ingénieur-e au Féminin</h1>
 
+  <div class="carousel">
+    <button on:click={prev} class="prev">‹</button>
+      <img src={images[currentIndex]} alt="" class="carousel-img" />
+    <button on:click={next} class="next">›</button>
+  </div>
+
   <h2>Présentation de l'association</h2>
   <p>
     Ingénieur-e au féminin est une association de Polytech Annecy-Chambéry qui
@@ -14,26 +20,26 @@
   </div>
   <div class="chartGrid">
     <div class="chartModule">
-      <span class="chartName">Emma Rechon-Reguet</span>
+      <span class="chartName">Prénom Nom</span>
       <hr class="chartLine" />
       <span class="chartTitle">Présidente</span>
-      <img src="/images_ornigramme/presidente.jpg" alt="photo_presidente" />
+      <img src="/images_ornigramme/presidente.png" alt="photo_presidente" />
     </div>
   </div>
   <div class="chartH1Container">
   </div>
   <div class="chartGrid">
     <div class="chartModule">
-      <span class="chartName">Alyssa Belleville</span>
+      <span class="chartName">Prénom nom</span>
       <hr class="chartLine" />
       <span class="chartTitle">Secrétaire</span>
-      <img src="/images_ornigramme/secretaire.jpg" alt="photo_presidente" />
+      <img src="/images_ornigramme/presidente.png" alt="photo_presidente" />
     </div>
     <div class="chartModule">
-      <span class="chartName">Julie Fabre</span>
+      <span class="chartName">Prénom nom</span>
       <hr class="chartLine" />
-      <span class="chartTitle">Vice-Présidente</span>
-      <img src="/images_ornigramme/vice_presidente.jpg" alt="photo_presidente" />
+      <span class="chartTitle">Trésorière</span>
+      <img src="/images_ornigramme/presidente.png" alt="photo_presidente" />
     </div>
   </div>
   <h2>Nos actions et événements</h2>
@@ -46,3 +52,31 @@
     et d’inspirer les étudiants.
   </p>
 </div>
+
+
+<script>
+
+  import { onMount } from 'svelte';
+  import { onDestroy } from 'svelte';
+  let images = [
+    '../../favicon.png',
+    '../../Logo_Credit_Agricol.jpg',
+    '../../Logo_CVEC.png'
+  ];
+  
+  let currentIndex = 0;
+  
+  function next() {
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  function prev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+  }
+
+  let interval;
+  onMount(() => {
+    interval = setInterval(next, 3000);
+    return () => clearInterval(interval);
+  });
+</script>
