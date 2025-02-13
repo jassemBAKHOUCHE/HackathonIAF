@@ -50,33 +50,3 @@
       return () => clearInterval(interval);
     });
   </script>
-
-
-
-<style>
-  .carousel {
-    position: relative;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
-  }
-
-  .carousel-img {
-    width: 90%;
-    height: 45%;
-  }
-
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  .prev { left: 10px; }
-  .next { right: 10px; }
-</style>
