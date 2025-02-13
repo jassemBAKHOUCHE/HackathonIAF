@@ -1,5 +1,5 @@
 <script>
-    let email = '';
+    let pseudo = '';
     let password = '';
     let isLoginMode = true;
 </script>
@@ -8,8 +8,8 @@
     <h2>{isLoginMode ? 'Se connecter' : 'Créer un compte'}</h2>
 
     <form>
-        <label for="email">Email</label>
-        <input type="email" id="email" bind:value={email} placeholder="Entrez votre email" required />
+        <label for="pseudo">Pseudo</label>
+        <input type="pseudo" id="pseudo" bind:value={pseudo} placeholder="Entrez votre pseudo" required />
 
         <label for="password">Mot de passe</label>
         <input type="password" id="password" bind:value={password} placeholder="Entrez votre mot de passe" required />

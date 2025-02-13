@@ -20,26 +20,26 @@
   </div>
   <div class="chartGrid">
     <div class="chartModule">
-      <span class="chartName">Prénom Nom</span>
+      <span class="chartName">Emma Rechon-Reguet</span>
       <hr class="chartLine" />
       <span class="chartTitle">Présidente</span>
-      <img src="/images_ornigramme/presidente.png" alt="photo_presidente" />
+      <img src="/images_ornigramme/presidente.jpg" alt="photo_presidente" />
     </div>
   </div>
   <div class="chartH1Container">
   </div>
   <div class="chartGrid">
     <div class="chartModule">
-      <span class="chartName">Prénom nom</span>
+      <span class="chartName">Alyssa Belleville</span>
       <hr class="chartLine" />
       <span class="chartTitle">Secrétaire</span>
-      <img src="/images_ornigramme/presidente.png" alt="photo_presidente" />
+      <img src="/images_ornigramme/secretaire.jpg" alt="photo_presidente" />
     </div>
     <div class="chartModule">
-      <span class="chartName">Prénom nom</span>
+      <span class="chartName">Julie Fabre</span>
       <hr class="chartLine" />
-      <span class="chartTitle">Trésorière</span>
-      <img src="/images_ornigramme/presidente.png" alt="photo_presidente" />
+      <span class="chartTitle">Vice Présidente</span>
+      <img src="/images_ornigramme/vice_presidente.jpg" alt="photo_presidente" />
     </div>
   </div>
   <h2>Nos actions et événements</h2>
