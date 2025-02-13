@@ -1,6 +1,12 @@
 <script>
-	import '../app.css';
-	let { children } = $props();
-</script>
+	import Header from "../lib/Header.svelte";
+  </script>
 
-{@render children()}
+<style>
+  @import "../app.css";
+</style>
+  
+  <Header title="Awesome Website" />
+  
+  <slot /> <!-- This ensures page content is displayed -->
+  
