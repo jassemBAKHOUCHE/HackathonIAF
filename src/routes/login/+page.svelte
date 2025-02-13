@@ -1,10 +1,11 @@
 <script>
     let email = '';
     let password = '';
+    let isLoginMode = true;
 </script>
 
 <div class="login-container">
-    <h2>Se connecter</h2>
+    <h2>{isLoginMode ? 'Se connecter' : 'Créer un compte'}</h2>
 
     <form>
         <label for="email">Email</label>
@@ -13,10 +14,22 @@
         <label for="password">Mot de passe</label>
         <input type="password" id="password" bind:value={password} placeholder="Entrez votre mot de passe" required />
 
-        <button type="submit">Se connecter</button>
-    </form>
-</div>
+        {#if !isLoginMode}
+            <!-- Champ supplémentaire pour l'inscription -->
+            <label for="confirm-password">Confirmer le mot de passe</label>
+            <input type="password" id="confirm-password" placeholder="Confirmez votre mot de passe" required />
+        {/if}
 
+        <button type="submit">{isLoginMode ? 'Se connecter' : 'S\'inscrire'}</button>
+    </form>
+
+    <p class="toggle">
+        {isLoginMode ? "Pas encore de compte ?" : "Déjà un compte ?"} 
+        <a href="#" on:click|preventDefault={() => isLoginMode = !isLoginMode}>
+            {isLoginMode ? "Créer un compte" : "Se connecter"}
+        </a>
+    </p>
+</div>
 <style>
     .login-container {
         width: 100%;
