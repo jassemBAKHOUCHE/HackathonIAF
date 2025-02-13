@@ -1,24 +1,27 @@
 <script context="module">
-    import profiles from '$lib/profiles.json';
-  
-    export function load({ params }) {
-      return {
-        props: { profile }
-      };
-    }
-  </script>
-  
-  <script>
-    export let profile;
-  </script>
+  import profiles from '$lib/profiles.json';
+  console.log('Profiles:', profiles);  // Vérifie le contenu de profiles
 
-  <main>
-    <h1>Profil Utilisateur</h1>
-      <p><strong>ID:</strong> {profile.id}</p>
-      <p><strong>Pseudo:</strong> {profile.pseudo}</p>
+  export function load() {
+    // Récupère le premier profil de la liste
+    const profile = profiles[0];  // Ou vous pouvez utiliser `params` pour récupérer un profil spécifique
 
-    {#if profile.admin}
-      <p><a href="/panel"> Accéder au panel de personnalisation</a></p>
-    {/if}
-  </main>
+    // Affiche profile dans la console
+
+    return {
+      props: { profile }
+    };
   
+  console.log(profile)
+  }
+</script>
+
+<script>
+export let profile; // Import the profile passed as a prop
+</script>
+
+<main>
+<h1>Profil Utilisateur</h1>
+<p><strong>ID: </strong></p>
+<p><strong>Pseudo:</strong></p>
+</main>
