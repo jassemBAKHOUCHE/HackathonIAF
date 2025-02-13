@@ -1,4 +1,213 @@
-body {
-  background-color: #e30000;
+/* ======== Styles Généraux ======== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  --primary-color: #c684b5;
+  --secondary-color: #f6ccb0;
+  --accent-color: #cb9dae;
+  --dark-color: #806886;
+  --light-bg: #f8d7d7;
+  --text-color: #333;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ======== Contenu Principal ======== */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 26px;
+  color: var(--dark-color);
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: var(--primary-color);
+  display: block;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: justify;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* Ajout d'un léger effet au survol du container */
+.container:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* ========== HEADER COMPACT ========== */
+header {
+  background: #c684b5;
+  color: white;
+  padding: 10px 20px; /* Moins d’espace pour réduire la hauteur */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== LOGO ========== */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #f6ccb0;
+}
+
+/* ========== MENU HAMBURGER ========== */
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #c684b5;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 15px;
+    display: block;
+  }
+}
+
+
+/* ======== Animations ======== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======== Footer ======== */
+footer {
+  background: var(--secondary-color);
+  color: var(--dark-color);
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centrer les liens */
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
