@@ -3,9 +3,9 @@
     
     <div class="footer-links">
       <a href="/">Accueil</a>
-      <a href="/about">À Propos</a>
       <a href="/contact">Contact</a>
       <a href="/login">Admin</a>
+      <a href="https://linktr.ee/ingenieureaufeminin">Linktree</a>
     </div>
   </footer>
   
