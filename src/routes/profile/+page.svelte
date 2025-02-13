@@ -1,27 +1,21 @@
 <script context="module">
-  import profiles from '$lib/profiles.json';
-  console.log('Profiles:', profiles);  // Vérifie le contenu de profiles
-
-  export function load() {
-    // Récupère le premier profil de la liste
-    const profile = profiles[0];  // Ou vous pouvez utiliser `params` pour récupérer un profil spécifique
-
-    // Affiche profile dans la console
-
-    return {
-      props: { profile }
-    };
-  
-  console.log(profile)
+  // Importer les données du fichier JSON (pour un exemple, on peut charger les données directement dans le fichier Svelte)
+  export async function load() {
+    console.log("ha")
+    const users = await fetch('$lib/profiles.json');
+    return { props: { users } };
   }
 </script>
 
 <script>
-export let profile; // Import the profile passed as a prop
+  export let users = [];
 </script>
 
 <main>
-<h1>Profil Utilisateur</h1>
-<p><strong>ID: </strong></p>
-<p><strong>Pseudo:</strong></p>
+  <h1>Liste des utilisateurs</h1>
+  <ul>
+    {#each users as { id, pseudo }}
+      <li>ID: {id}, Pseudo: {pseudo}</li>
+    {/each}
+  </ul>
 </main>
